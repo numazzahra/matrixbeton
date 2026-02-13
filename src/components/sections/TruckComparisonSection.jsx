@@ -13,7 +13,6 @@ const TruckComparisonSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
           
-          {/* Kolom Kiri - Minimix */}
           <div className="flex flex-col">
             <div className="w-full h-48 md:h-64 mb-4 overflow-hidden bg-gray-100 rounded-lg flex items-center justify-center">
               <img 
@@ -49,7 +48,6 @@ const TruckComparisonSection = () => {
             </ul>
           </div>
 
-          {/* Kolom Kanan - TM Besar */}
           <div className="flex flex-col">
             <div className="w-full h-48 md:h-64 mb-4 overflow-hidden bg-gray-100 rounded-lg flex items-center justify-center">
               <img 
