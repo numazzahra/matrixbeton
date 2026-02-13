@@ -1,15 +1,22 @@
 import React from 'react';
 import Container from './Container';
 import Button from '../ui/Button';
+import whatsappIcon from '../../assets/whatsapp.png'; // Import logo WhatsApp
 
 const Footer = () => {
+  // Function untuk handle WhatsApp click
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "628988882945"; // Ganti dengan nomor HP kamu
+    const message = "Halo MatrixBeton, saya ingin bertanya seputar layanan beton readymix. Mohon infonya, terima kasih.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <footer className="bg-gray-dark text-primary-white py-16 md:py-20 lg:py-24">
       <Container>
-        {/* GRID 3 KOLOM */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
           
-          {/* ===== KOLOM 1 - BRAND & AREA ===== */}
           <div className="flex flex-col space-y-4">
             <h3 className="font-cabin font-bold text-primary-white text-2xl md:text-3xl lg:text-4xl mb-2">
               MatrixBeton
@@ -27,7 +34,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* ===== KOLOM 2 - NAVIGASI CEPAT ===== */}
           <div className="flex flex-col space-y-4">
             <h4 className="font-cabin font-semibold text-primary-white text-lg md:text-xl mb-2">
               Navigasi Cepat
@@ -46,7 +52,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* ===== KOLOM 3 - KONTAK ===== */}
           <div className="flex flex-col space-y-4">
             <h4 className="font-cabin font-semibold text-primary-white text-lg md:text-xl mb-2">
               Kontak
@@ -63,8 +68,14 @@ const Footer = () => {
               <Button 
                 variant="whatsapp" 
                 size="sm"
-                className="px-6 py-3 text-base"
+                onClick={handleWhatsAppClick}
+                className="px-6 py-3 text-base flex items-center gap-2 cursor-pointer"
               >
+                <img 
+                  src={whatsappIcon} 
+                  alt="" 
+                  className="w-5 h-5 md:w-6 md:h-6"
+                />
                 Hubungi Kami
               </Button>
             </div>

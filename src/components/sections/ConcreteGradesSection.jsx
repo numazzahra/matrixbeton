@@ -1,6 +1,8 @@
 import React from 'react';
 import Container from '../layout/Container';
 import Button from '../ui/Button';
+import mutuImage from '../../assets/mutu.png';
+import whatsappIcon from '../../assets/whatsapp.png'; 
 
 const ConcreteGradesSection = () => {
   const grades = [
@@ -12,6 +14,25 @@ const ConcreteGradesSection = () => {
     'K450 FA / NFA'
   ];
 
+  const scrollToOrdering = () => {
+    const element = document.getElementById('cara-pemesanan');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "628988882945"; 
+    const message = "Halo MatrixBeton, saya ingin pesan:"
+      + "%0a%0a- Mutu: [K225/K250/dll]"
+      + "%0a- Volume: [angka] m³"
+      + "%0a- Lokasi: [alamat]"
+      + "%0a%0aMohon info ketersediaan. Terima kasih.";
+    
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-white">
       <Container>
@@ -21,7 +42,7 @@ const ConcreteGradesSection = () => {
             <div 
               className="w-full bg-cover bg-center bg-no-repeat rounded-2xl"
               style={{ 
-                backgroundImage: "url('/images/mutu-beton.jpg')",
+                backgroundImage: `url(${mutuImage})`,
                 minHeight: '400px',
                 height: '100%'
               }}
@@ -66,14 +87,22 @@ const ConcreteGradesSection = () => {
               <Button 
                 variant="whatsapp" 
                 size="default"
-                className="px-8 py-3 text-base md:text-lg font-bold"
+                onClick={handleWhatsAppClick}
+                className="px-10 py-3 text-base md:text-lg font-bold flex items-center justify-center gap-2 min-w-[220px] md:min-w-[260px] cursor-pointer"
               >
+                <img 
+                  src={whatsappIcon} 
+                  alt="" 
+                  className="w-5 h-5 md:w-6 md:h-6"
+                />
                 Pesan via WhatsApp
               </Button>
+              
               <Button 
                 variant="secondary" 
                 size="default"
-                className="px-8 py-3 text-base md:text-lg font-bold"
+                onClick={scrollToOrdering}
+                className="px-10 py-3 text-base md:text-lg font-bold min-w-[220px] md:min-w-[260px] flex items-center justify-center cursor-pointer"
               >
                 Cara Pesan
               </Button>

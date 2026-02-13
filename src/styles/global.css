@@ -43,7 +43,7 @@ body {
   background-color: var(--color-primary-white);
 }
 
-/* ===== CUSTOM SCROLLBAR - KUNING ===== */
+/* ===== CUSTOM SCROLLBAR ===== */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -51,9 +51,18 @@ body {
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-secondary-yellow);  /* ← DIUBAH JADI KUNING */
+  background: var(--color-secondary-yellow);  
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #e6a900;  /* ← KUNING LEBIH GELAP */
+  background: #e6a900;  
+}
+
+/* ===== HIDE SCROLLBAR FOR NAVBAR ===== */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

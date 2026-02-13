@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../layout/Container';
+import layananImage from '../../assets/layanan.jpg'; 
 
 const PumpServiceSection = () => {
   const pumpTypes = [
@@ -42,14 +43,10 @@ const PumpServiceSection = () => {
             <div 
               className="w-full h-[500px] md:h-[600px] lg:h-[650px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
               style={{ 
-                backgroundImage: "url('/images/truck-pompa.jpg')",
+                backgroundImage: `url(${layananImage})`, 
               }}
             >
-              <div className="w-full h-full flex items-center justify-center bg-black/20">
-                <span className="font-cabin text-gray-300 text-lg md:text-xl">
-                  1261 Fill × 72 Hug
-                </span>
-              </div>
+            
             </div>
           </div>
 

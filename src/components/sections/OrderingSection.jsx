@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../layout/Container';
+import orderingImage from '../../assets/ordering.png'; 
 
 const OrderingSection = () => {
   const steps = [
@@ -26,7 +27,7 @@ const OrderingSection = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-gray-light">
+    <section id="cara-pemesanan" className="py-16 md:py-24 lg:py-32 bg-gray-light">
       <Container>
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
           
@@ -34,20 +35,15 @@ const OrderingSection = () => {
             <div 
               className="w-full h-[300px] md:h-[350px] lg:h-[400px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
               style={{ 
-                backgroundImage: "url('/images/cara-pemesanan.jpg')",
+                backgroundImage: `url(${orderingImage})`,
               }}
             >
-              <div className="w-full h-full bg-black/20 flex items-center justify-center">
-                <span className="font-cabin text-primary-white/80 text-lg md:text-xl">
-                  Cara Pemesanan
-                </span>
-              </div>
             </div>
           </div>
 
           <div className="flex flex-col">
             <h2 className="font-cabin font-bold text-primary-black text-2xl md:text-4xl lg:text-5xl mb-8 md:mb-10">
-              CARA <span className="text-secondary-yellow">PEMESANAN</span>
+              CARA PEMESANAN {/* DIHAPUS span DAN CLASS secondary-yellow */}
             </h2>
 
             <div className="space-y-6 md:space-y-7">

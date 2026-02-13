@@ -1,5 +1,7 @@
 import React from 'react';
 import Container from '../layout/Container';
+import minimixImage from '../../assets/Minimix.png'; 
+import tmBesarImage from '../../assets/TMBesar.png'; 
 
 const TruckComparisonSection = () => {
   return (
@@ -11,11 +13,14 @@ const TruckComparisonSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
           
+          {/* Kolom Kiri - Minimix */}
           <div className="flex flex-col">
-            <div className="w-full h-48 md:h-64 bg-gray-200 mb-4 flex items-center justify-center">
-              <span className="font-cabin text-gray-600 text-lg md:text-xl">
-                1400 Fill × 742.02 Hug
-              </span>
+            <div className="w-full h-48 md:h-64 mb-4 overflow-hidden bg-gray-100 rounded-lg flex items-center justify-center">
+              <img 
+                src={minimixImage} 
+                alt="Beton Minimix"
+                className="w-full h-full object-contain"
+              />
             </div>
             
             <h4 className="font-cabin font-bold text-primary-black text-xl md:text-2xl mb-3">
@@ -44,11 +49,14 @@ const TruckComparisonSection = () => {
             </ul>
           </div>
 
+          {/* Kolom Kanan - TM Besar */}
           <div className="flex flex-col">
-            <div className="w-full h-48 md:h-64 bg-gray-200 mb-4 flex items-center justify-center">
-              <span className="font-cabin text-gray-600 text-lg md:text-xl">
-                1400 Fill × 742.02 Hug
-              </span>
+            <div className="w-full h-48 md:h-64 mb-4 overflow-hidden bg-gray-100 rounded-lg flex items-center justify-center">
+              <img 
+                src={tmBesarImage} 
+                alt="Truck Mixer Besar"
+                className="w-full h-full object-contain"
+              />
             </div>
             
             <h4 className="font-cabin font-bold text-primary-black text-xl md:text-2xl mb-3">

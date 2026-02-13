@@ -1,5 +1,10 @@
 import React from 'react';
 import Container from '../layout/Container';
+import dokumentasi1 from '../../assets/dokumentasi1.png';
+import dokumentasi2 from '../../assets/dokumentasi2.mp4';
+import dokumentasi3 from '../../assets/dokumentasi3.png';
+import dokumentasi4 from '../../assets/dokumentasi4.png';
+import dokumentasi5 from '../../assets/dokumentasi5.mp4';
 
 const GallerySection = () => {
   return (
@@ -13,61 +18,62 @@ const GallerySection = () => {
           
           <div className="md:col-span-1">
             <div 
-              className="w-full h-[500px] md:h-[600px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
+              className="w-full h-[500px] md:h-[600px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg overflow-hidden"
               style={{ 
-                backgroundImage: "url('/images/gallery-1.jpg')",
+                backgroundImage: `url(${dokumentasi1})`,
               }}
             >
               <div className="w-full h-full bg-black/20 flex items-end p-6">
-                <span className="font-poppins text-primary-white/80 text-sm">Dokumentasi Proyek 1</span>
               </div>
             </div>
           </div>
 
-          <div className="md:col-span-2">
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
+          <div className="md:col-span-2 h-[500px] md:h-[600px]">
+            <div className="grid grid-cols-2 gap-4 md:gap-6 h-full">
               
-              <div 
-                className="w-full h-[240px] md:h-[290px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
-                style={{ 
-                  backgroundImage: "url('/images/gallery-2.jpg')",
-                }}
-              >
-                <div className="w-full h-full bg-black/20 flex items-end p-4">
-                  <span className="font-poppins text-primary-white/80 text-sm">Dokumentasi Proyek 2</span>
+              <div className="w-full h-full rounded-2xl shadow-lg overflow-hidden relative">
+                <video 
+                  src={dokumentasi2}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/20 flex items-end p-4">
                 </div>
               </div>
               
               <div 
-                className="w-full h-[240px] md:h-[290px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
+                className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg overflow-hidden"
                 style={{ 
-                  backgroundImage: "url('/images/gallery-3.jpg')",
+                  backgroundImage: `url(${dokumentasi3})`,
                 }}
               >
                 <div className="w-full h-full bg-black/20 flex items-end p-4">
-                  <span className="font-poppins text-primary-white/80 text-sm">Dokumentasi Proyek 3</span>
                 </div>
               </div>
               
               <div 
-                className="w-full h-[240px] md:h-[290px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
+                className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg overflow-hidden"
                 style={{ 
-                  backgroundImage: "url('/images/gallery-4.jpg')",
+                  backgroundImage: `url(${dokumentasi4})`,
                 }}
               >
                 <div className="w-full h-full bg-black/20 flex items-end p-4">
-                  <span className="font-poppins text-primary-white/80 text-sm">Dokumentasi Proyek 4</span>
                 </div>
               </div>
               
-              <div 
-                className="w-full h-[240px] md:h-[290px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg"
-                style={{ 
-                  backgroundImage: "url('/images/gallery-5.jpg')",
-                }}
-              >
-                <div className="w-full h-full bg-black/20 flex items-end p-4">
-                  <span className="font-poppins text-primary-white/80 text-sm">Dokumentasi Proyek 5</span>
+              <div className="w-full h-full rounded-2xl shadow-lg overflow-hidden relative">
+                <video 
+                  src={dokumentasi5}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/20 flex items-end p-4">
                 </div>
               </div>
             </div>
