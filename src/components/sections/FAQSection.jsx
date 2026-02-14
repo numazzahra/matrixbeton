@@ -1,22 +1,8 @@
 import React, { useState } from 'react';
 import Container from '../layout/Container';
-import Button from '../ui/Button';
-import whatsappIcon from '../../assets/whatsapp.png'; 
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
-
-  const handleWhatsAppClick = () => {
-    const phoneNumber = "628988882945"; 
-    const message = `Halo MatrixBeton, saya ada beberapa pertanyaan seputar:
-
-[Tulis pertanyaan Anda di sini]
-
-Mohon infonya, terima kasih.`;
-    
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
 
   const faqItems = [
     {
@@ -34,128 +20,79 @@ Mohon infonya, terima kasih.`;
           
           <div>
             <p className="font-cabin font-bold text-primary-white mb-1">
-              Truck Mixer Kecil / Minimix (TM Kecil)
+              Truck Mixer Mini (TM Mini)
             </p>
             <p className="font-poppins text-primary-white/70">
-              Minimum pemesanan 3 m³. Pemesanan di bawah 3 m³ akan dikenakan biaya tambahan (charge).
+              Minimum pemesanan 2,5 m³. Pemesanan di bawah 2,5 m³ akan dikenakan biaya tambahan (charge).
             </p>
           </div>
           
           <p className="font-poppins text-primary-white/70 mt-2">
             Untuk memastikan jenis truck dan perhitungan biaya yang paling sesuai dengan kondisi proyek, silakan konsultasi terlebih dahulu melalui WhatsApp.
           </p>
-
-          <div className="mt-4 pt-2">
-            <Button 
-              variant="whatsapp" 
-              size="default"
-              onClick={handleWhatsAppClick}
-              className="px-6 py-3 flex items-center gap-2 cursor-pointer"
-            >
-              <img 
-                src={whatsappIcon} 
-                alt="" 
-                className="w-7 h-7"
-              />
-              Konsultasi via WhatsApp
-            </Button>
-          </div>
         </div>
       )
     },
     {
       question: 'Apakah bisa memesan beton untuk jalan sempit?',
       answer: (
-        <div className="space-y-2">
+        <div className="space-y-3">
           <p className="font-poppins text-primary-white/70">
-            Bisa. Kami menyediakan armada Minimix (Truck Mixer Kecil) yang dirancang khusus untuk akses jalan sempit seperti perumahan, gang, atau lokasi dengan keterbatasan manuver.
+            Bisa. Kami menyesuaikan dengan kondisi lapangan. Untuk pemesanan beton di jalan sempit, tersedia beberapa opsi:
           </p>
+          <ul className="list-disc list-inside font-poppins text-primary-white/70 space-y-1 ml-2">
+            <li>Menggunakan armada Minimix yang dirancang khusus untuk akses terbatas</li>
+            <li>Metode bongkar lain seperti menggunakan concrete pump atau pengecoran manual (POK) sesuai kebutuhan</li>
+          </ul>
           <p className="font-poppins text-primary-white/70 mt-2">
-            Dengan dimensi yang lebih kecil dan kapasitas 3-4 m³, Minimix bisa menjangkau area yang sulit dilalui truck mixer besar.
+            Tim kami siap membantu survey lokasi untuk menentukan metode terbaik dan memastikan akses truck mixer sesuai dengan kondisi di lapangan.
           </p>
-          <div className="mt-4 pt-2">
-            <Button 
-              variant="whatsapp" 
-              size="default"
-              onClick={handleWhatsAppClick}
-              className="px-6 py-3 flex items-center gap-2 cursor-pointer"
-            >
-              <img src={whatsappIcon} alt="" className="w-7 h-7" />
-              Konsultasi via WhatsApp
-            </Button>
-          </div>
         </div>
       )
     },
     {
       question: 'Bagaimana jika lokasi proyek sulit dijangkau?',
       answer: (
-        <div className="space-y-2">
+        <div className="space-y-3">
           <p className="font-poppins text-primary-white/70">
-            Tim kami akan melakukan survey lokasi terlebih dahulu untuk menentukan akses terbaik dan jenis pompa yang sesuai. Kami memiliki berbagai jenis pompa dengan jangkauan berbeda.
+            Kami akan membantu melakukan survey lokasi terlebih dahulu untuk mengecek tingkat kesulitan akses dan menentukan solusi terbaik.
           </p>
           <p className="font-poppins text-primary-white/70">
-            Untuk lokasi dengan akses sangat terbatas, kami bisa menggunakan Pompa Mini atau kombinasi dengan concrete bucket.
+            Berdasarkan hasil survey, tim kami akan merekomendasikan jenis armada yang tepat, baik menggunakan Minimix, pompa beton dengan jangkauan sesuai, atau metode pengecoran alternatif lainnya.
           </p>
-          <div className="mt-4 pt-2">
-            <Button 
-              variant="whatsapp" 
-              size="default"
-              onClick={handleWhatsAppClick}
-              className="px-6 py-3 flex items-center gap-2 cursor-pointer"
-            >
-              <img src={whatsappIcon} alt="" className="w-7 h-7" />
-              Konsultasi via WhatsApp
-            </Button>
-          </div>
         </div>
       )
     },
     {
       question: 'Apakah harga sudah termasuk operator dan BBM?',
       answer: (
-        <div className="space-y-2">
+        <div className="space-y-3">
           <p className="font-poppins text-primary-white/70">
-            Ya, harga sewa pompa sudah termasuk operator berpengalaman dan BBM untuk operasional pompa selama pengecoran berlangsung.
+            Berikut rincian komponen harga:
           </p>
-          <p className="font-poppins text-primary-white/70">
-            Untuk harga beton readymix, biasanya belum termasuk biaya pompa. Keduanya dapat dipesan secara terpisah atau dalam satu paket.
+          <ul className="list-disc list-inside font-poppins text-primary-white/70 space-y-1 ml-2">
+            <li>Harga sewa pompa sudah termasuk operator berpengalaman</li>
+            <li>Biaya solar (BBM) untuk operasional sudah termasuk dalam harga</li>
+            <li>Biaya tol perjalanan sudah ditanggung oleh kami</li>
+            <li>Belum termasuk PPN 11%</li>
+            <li>Sarana dan tips di lokasi menjadi tanggung jawab proyek</li>
+          </ul>
+          <p className="font-poppins text-primary-white/70 mt-2">
+            Untuk harga beton readymix, biasanya belum termasuk biaya pompa. Keduanya dapat dipesan secara terpisah atau dalam satu paket sesuai kebutuhan.
           </p>
-          <div className="mt-4 pt-2">
-            <Button 
-              variant="whatsapp" 
-              size="default"
-              onClick={handleWhatsAppClick}
-              className="px-6 py-3 flex items-center gap-2 cursor-pointer"
-            >
-              <img src={whatsappIcon} alt="" className="w-7 h-7" />
-              Konsultasi via WhatsApp
-            </Button>
-          </div>
         </div>
       )
     },
     {
       question: 'Apakah harga bisa berubah?',
       answer: (
-        <div className="space-y-2">
+        <div className="space-y-3">
           <p className="font-poppins text-primary-white/70">
-            Harga dapat berubah menyesuaikan dengan fluktuasi harga material, jarak pengiriman, dan kondisi lokasi proyek.
+            Ya, harga dapat berubah menyesuaikan dengan fluktuasi harga bahan material, jarak pengiriman, dan kondisi lokasi proyek.
           </p>
           <p className="font-poppins text-primary-white/70">
-            Untuk mendapatkan penawaran harga terbaru dan akurat sesuai proyek Anda, silakan hubungi tim marketing kami.
+            Untuk mendapatkan penawaran harga terbaru dan akurat sesuai spesifikasi proyek Anda, silakan hubungi tim marketing kami.
           </p>
-          <div className="mt-4 pt-2">
-            <Button 
-              variant="whatsapp" 
-              size="default"
-              onClick={handleWhatsAppClick}
-              className="px-6 py-3 flex items-center gap-2 cursor-pointer"
-            >
-              <img src={whatsappIcon} alt="" className="w-7 h-7" />
-              Konsultasi via WhatsApp
-            </Button>
-          </div>
         </div>
       )
     }
