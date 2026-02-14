@@ -23,11 +23,13 @@ const ConcreteGradesSection = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "628988882945"; 
-    const message = "Halo MatrixBeton, saya ingin pesan:"
-      + "%0a%0a- Mutu: [K225/K250/dll]"
-      + "%0a- Volume: [angka] m³"
-      + "%0a- Lokasi: [alamat]"
-      + "%0a%0aMohon info ketersediaan. Terima kasih.";
+    const message = `Halo MatrixBeton, saya ingin pesan:
+
+- Mutu: [K225/K250/dll]
+- Volume: [angka] m³
+- Lokasi: [alamat]
+
+Mohon info ketersediaan. Terima kasih.`;
     
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

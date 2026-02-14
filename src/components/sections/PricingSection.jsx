@@ -58,34 +58,42 @@ const PricingSection = () => {
     let message = "";
     
     if (pumpTitle === "Pompa Mini") {
-      message = "Halo MatrixBeton, saya ingin pesan Pompa Mini:"
-        + "%0a%0a- Volume: [1-25 / 25-50 / 51-75 / 76-100] m³"
-        + "%0a- Lokasi proyek: [alamat]"
-        + "%0a- Akses jalan: [sempit/sedang/luas]"
-        + "%0a%0aMohon info ketersediaan dan harga untuk Pompa Mini. Terima kasih.";
+      message = `Halo MatrixBeton, saya ingin pesan Pompa Mini:
+
+- Volume: [1-25 / 25-50 / 51-75 / 76-100] m³
+- Lokasi proyek: [alamat]
+- Akses jalan: [sempit/sedang/luas]
+
+Mohon info ketersediaan dan harga untuk Pompa Mini. Terima kasih.`;
     } 
     else if (pumpTitle === "Pompa Standar") {
-      message = "Halo MatrixBeton, saya ingin pesan Pompa Standar:"
-        + "%0a%0a- Volume: [1-25 / 25-50 / 51-75 / 76-100] m³"
-        + "%0a- Lokasi proyek: [alamat]"
-        + "%0a- Tinggi bangunan: [rendah/sedang]"
-        + "%0a%0aMohon info ketersediaan dan harga untuk Pompa Standar. Terima kasih.";
+      message = `Halo MatrixBeton, saya ingin pesan Pompa Standar:
+
+- Volume: [1-25 / 25-50 / 51-75 / 76-100] m³
+- Lokasi proyek: [alamat]
+- Tinggi bangunan: [rendah/sedang]
+
+Mohon info ketersediaan dan harga untuk Pompa Standar. Terima kasih.`;
     }
     else if (pumpTitle === "Pompa Long Boom") {
-      message = "Halo MatrixBeton, saya ingin pesan Pompa Long Boom:"
-        + "%0a%0a- Volume: [1-25 / 25-50 / 51-75 / 76-100] m³"
-        + "%0a- Lokasi proyek: [alamat]"
-        + "%0a- Tinggi bangunan: [lantai]"
-        + "%0a- Jangkauan dibutuhkan: [meter]"
-        + "%0a%0aMohon info ketersediaan dan harga untuk Pompa Long Boom. Terima kasih.";
+      message = `Halo MatrixBeton, saya ingin pesan Pompa Long Boom:
+
+- Volume: [1-25 / 25-50 / 51-75 / 76-100] m³
+- Lokasi proyek: [alamat]
+- Tinggi bangunan: [lantai]
+- Jangkauan dibutuhkan: [meter]
+
+Mohon info ketersediaan dan harga untuk Pompa Long Boom. Terima kasih.`;
     }
     else if (pumpTitle === "Pompa Super Long Boom") {
-      message = "Halo MatrixBeton, saya ingin pesan Pompa Super Long Boom:"
-        + "%0a%0a- Volume: [1-25 / 25-50 / 51-75 / 76-100] m³"
-        + "%0a- Lokasi proyek: [alamat]"
-        + "%0a- Tinggi bangunan: [lantai]"
-        + "%0a- Jangkauan maksimal: [meter]"
-        + "%0a%0aMohon info ketersediaan dan harga untuk Pompa Super Long Boom. Terima kasih.";
+      message = `Halo MatrixBeton, saya ingin pesan Pompa Super Long Boom:
+
+- Volume: [1-25 / 25-50 / 51-75 / 76-100] m³
+- Lokasi proyek: [alamat]
+- Tinggi bangunan: [lantai]
+- Jangkauan maksimal: [meter]
+
+Mohon info ketersediaan dan harga untuk Pompa Super Long Boom. Terima kasih.`;
     }
     
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

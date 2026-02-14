@@ -8,9 +8,11 @@ const FAQSection = () => {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "628988882945"; 
-    const message = "Halo MatrixBeton, saya ada beberapa pertanyaan seputar:"
-      + "%0a%0a[ Tulis pertanyaan Anda di sini ]"
-      + "%0a%0aMohon infonya, terima kasih.";
+    const message = `Halo MatrixBeton, saya ada beberapa pertanyaan seputar:
+
+[Tulis pertanyaan Anda di sini]
+
+Mohon infonya, terima kasih.`;
     
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
