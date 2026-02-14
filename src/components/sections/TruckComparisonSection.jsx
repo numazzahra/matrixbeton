@@ -64,7 +64,7 @@ const TruckComparisonSection = () => {
               <li className="flex items-start gap-2">
                 <span className="text-primary-black text-lg md:text-xl">-</span>
                 <span className="font-poppins text-primary-black text-base md:text-lg">
-                  Kapasitas ±7–8 m³
+                  Kapasitas ±7–7,5 m³
                 </span>
               </li>
               <li className="flex items-start gap-2">
