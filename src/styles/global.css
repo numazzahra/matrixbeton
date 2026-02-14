@@ -9,28 +9,44 @@
   --color-gray-light: #f6f6f6;
   --color-gray-medium: #545454;
   --color-gray-border: #e1e1e1;
-  
+
   --font-cabin: "Cabin", sans-serif;
   --font-poppins: "Poppins", sans-serif;
-  
+
   --animate-fade-in: fade-in 1s ease forwards;
   --animate-fade-up: fade-up 1s ease forwards;
   --animate-scale: scale 0.3s ease;
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; transform: translateY(-10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-up {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes scale {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.05); }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
 }
 
 html {
@@ -51,11 +67,11 @@ body {
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-secondary-yellow);  
+  background: var(--color-secondary-yellow);
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #e6a900;  
+  background: #e6a900;
 }
 
 /* ===== HIDE SCROLLBAR FOR NAVBAR ===== */
