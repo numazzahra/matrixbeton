@@ -91,7 +91,7 @@ const GallerySection = () => {
           >
             <div 
               className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()} // Mencegah klik di dalam modal menutup modal
+              onClick={(e) => e.stopPropagation()} 
             >
               <button
                 onClick={closeModal}
