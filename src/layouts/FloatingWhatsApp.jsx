@@ -4,10 +4,12 @@ import whatsappIcon from '../assets/whatsapp.png';
 
 const FloatingWhatsApp = () => {
   const phoneNumber = "628988882945";
-  const message = "Halo MatrixBeton, saya ada rencana proyek dan butuh info beton readymix. Bisa dibantu?";  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const message = "Halo MatrixBeton, saya ada rencana proyek dan butuh info beton readymix. Bisa dibantu?";  
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 animate-fade-in opacity-0" style={{ animationDelay: '800ms' }}>
+    // Z-INDEX DIUBAH DARI 50 JADI 40
+    <div className="fixed bottom-6 right-6 z-40 animate-fade-in opacity-0" style={{ animationDelay: '800ms' }}>
       <a
         href={whatsappUrl}
         target="_blank"
