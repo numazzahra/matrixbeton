@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from '../layout/Container';
 import dokumentasi1 from '../../assets/dokumentasi1.png';
 import dokumentasi2 from '../../assets/dokumentasi2.mp4';
@@ -7,6 +7,19 @@ import dokumentasi4 from '../../assets/dokumentasi4.png';
 import dokumentasi5 from '../../assets/dokumentasi5.mp4';
 
 const GallerySection = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
   return (
     <section id="galeri" className="py-16 md:py-24 lg:py-32 bg-gray-dark">
       <Container>
@@ -16,15 +29,12 @@ const GallerySection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 cursor-pointer" onClick={() => openModal(dokumentasi1)}>
             <div 
-              className="w-full h-[500px] md:h-[600px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg overflow-hidden"
-              style={{ 
-                backgroundImage: `url(${dokumentasi1})`,
-              }}
+              className="w-full h-[500px] md:h-[600px] bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300"
+              style={{ backgroundImage: `url(${dokumentasi1})` }}
             >
-              <div className="w-full h-full bg-black/20 flex items-end p-6">
-              </div>
+              <div className="w-full h-full bg-black/20 flex items-end p-6"></div>
             </div>
           </div>
 
@@ -40,28 +50,23 @@ const GallerySection = () => {
                   muted
                   playsInline
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-black/20 flex items-end p-4">
-                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/20 flex items-end p-4"></div>
               </div>
               
               <div 
-                className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg overflow-hidden"
-                style={{ 
-                  backgroundImage: `url(${dokumentasi3})`,
-                }}
+                className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300"
+                style={{ backgroundImage: `url(${dokumentasi3})` }}
+                onClick={() => openModal(dokumentasi3)}
               >
-                <div className="w-full h-full bg-black/20 flex items-end p-4">
-                </div>
+                <div className="w-full h-full bg-black/20 flex items-end p-4"></div>
               </div>
               
               <div 
-                className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg overflow-hidden"
-                style={{ 
-                  backgroundImage: `url(${dokumentasi4})`,
-                }}
+                className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300"
+                style={{ backgroundImage: `url(${dokumentasi4})` }}
+                onClick={() => openModal(dokumentasi4)}
               >
-                <div className="w-full h-full bg-black/20 flex items-end p-4">
-                </div>
+                <div className="w-full h-full bg-black/20 flex items-end p-4"></div>
               </div>
               
               <div className="w-full h-full rounded-2xl shadow-lg overflow-hidden relative">
@@ -73,13 +78,38 @@ const GallerySection = () => {
                   muted
                   playsInline
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-black/20 flex items-end p-4">
-                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/20 flex items-end p-4"></div>
               </div>
             </div>
           </div>
         </div>
 
+        {isModalOpen && (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+            onClick={closeModal} 
+          >
+            <div 
+              className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()} // Mencegah klik di dalam modal menutup modal
+            >
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 text-white text-3xl hover:text-secondary-yellow transition-colors z-10 bg-black/50 w-10 h-10 rounded-full flex items-center justify-center"
+              >
+                ✕
+              </button>
+
+              {selectedImage && (
+                <img 
+                  src={selectedImage} 
+                  alt="Full screen project"
+                  className="max-w-full max-h-full object-contain rounded-lg"
+                />
+              )}
+            </div>
+          </div>
+        )}
       </Container>
     </section>
   );
